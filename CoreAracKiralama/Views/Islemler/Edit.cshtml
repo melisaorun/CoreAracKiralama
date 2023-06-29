@@ -1,0 +1,65 @@
+﻿@model CoreAracKiralama.Models.Islemler
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Islemler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IslemNo" />
+            <div class="form-group">
+                <label asp-for="AracSecimi" class="control-label"></label>
+                <input asp-for="AracSecimi" class="form-control" />
+                <span asp-validation-for="AracSecimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlisYeri" class="control-label"></label>
+                <input asp-for="AlisYeri" class="form-control" />
+                <span asp-validation-for="AlisYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IadeYeri" class="control-label"></label>
+                <input asp-for="IadeYeri" class="form-control" />
+                <span asp-validation-for="IadeYeri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlisTarihi" class="control-label"></label>
+                <input asp-for="AlisTarihi" class="form-control" />
+                <span asp-validation-for="AlisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IadeTarihi" class="control-label"></label>
+                <input asp-for="IadeTarihi" class="form-control" />
+                <span asp-validation-for="IadeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlisSaati" class="control-label"></label>
+                <input asp-for="AlisSaati" class="form-control" />
+                <span asp-validation-for="AlisSaati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IadeSaati" class="control-label"></label>
+                <input asp-for="IadeSaati" class="form-control" />
+                <span asp-validation-for="IadeSaati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

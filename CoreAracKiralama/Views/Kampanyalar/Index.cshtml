@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CoreAracKiralama.Models.Kampanyalar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kampanya</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kampanya)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kampanya)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.KampanyaNo">Düzenle</a> |
+               
+                <a asp-action="Delete" asp-route-id="@item.KampanyaNo">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

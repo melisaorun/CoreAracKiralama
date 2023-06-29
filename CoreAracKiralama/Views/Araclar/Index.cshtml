@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CoreAracKiralama.Models.Araclar>
+
+@{
+    ViewData["Title"] = "Index";
+      Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Araç</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VitesDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yakit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VitesDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yakit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AracNo">Düzenle</a> |
+                |
+                <a asp-action="Delete" asp-route-id="@item.AracNo">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
